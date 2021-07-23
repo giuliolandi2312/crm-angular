@@ -1,0 +1,54 @@
+<mat-toolbar  class="navbar w3-teal sticky-top p-3">
+    <div>
+        <a class="w3-text-white" routerLink="" style="font-size: 2em;">
+            <mat-icon>
+                <span class="material-icons-outlined">assessment</span>
+            </mat-icon>GL-Manager
+        </a>
+    </div>
+    <div >
+        <div class="w3-dropdown-hover w3-teal">
+            <button class="w3-white w3-hover-teal mx-1 " mat-mini-fab ><mat-icon>
+                <span class="material-icons-outlined">
+                    menu
+                </span></mat-icon>
+            </button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                <a routerLink="user" class="w3-bar-item w3-button w3-text-teal w3-hover-lime">Utenti</a>
+                <a routerLink="invoice"class="w3-bar-item w3-button w3-text-teal w3-hover-lime">Fatture</a>
+                <a routerLink="customer" class="w3-bar-item w3-button w3-text-teal w3-hover-lime">Clienti</a>
+                <a routerLink="login" class="w3-bar-item w3-button w3-text-teal w3-hover-lime">Accedi</a>
+                <a routerLink="register" class="w3-bar-item w3-button w3-text-teal w3-hover-lime">Registrati</a>
+            </div>
+        </div>
+        <div class="w3-dropdown-hover " >
+            <button class="w3-white w3-hover-teal mx-1" mat-mini-fab matBadge="5" matBadgePosition="after" matBadgeColor="warn" >
+                <mat-icon>
+                    <span class="material-icons-outlined">
+                        notifications
+                    </span>
+                </mat-icon>
+            </button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a  class="w3-bar-item w3-button w3-text-teal w3-hover-lime">Hai 5 nuove notifiche!</a>
+        </div>
+    </div>
+        <button class="w3-white w3-hover-teal mx-1" mat-mini-fab >
+            <mat-icon>
+                <span class="material-icons-outlined"><a class="icons"href="https://support.google.com/accounts/answer/3118621?hl=it">
+                    settings</a>
+                </span>
+            </mat-icon>
+        </button>
+        <button class="w3-white w3-hover-teal mx-1 " mat-mini-fab >
+            <mat-icon>
+                <span class="material-icons-outlined"><a class="icons"href="https://www.google.com/webhp?hl=it&sa=X&ved=0ahUKEwi11OSYhMTxAhUKgf0HHeReCmAQPAgI">
+                    search</a>
+                </span>
+            </mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
+
+
+<router-outlet></router-outlet>

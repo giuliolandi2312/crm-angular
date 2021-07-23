@@ -1,0 +1,84 @@
+
+
+<button mat-flat-button class="add-button" (click)="goToCreate()">NUOVO CLIENTE</button>
+
+<table class="table table w3-table w3-bordered w3-hoverable">
+    <thead>
+    <tr>
+      <th scope="col" sortable="id" (sort)="onSort($event)">#</th>
+      <th scope="col" sortable="ragioneSociale" (sort)="onSort($event)">Ragione sociale</th>
+      <th scope="col" sortable="nomeContatto" (sort)="onSort($event)">Nome e cognome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Fatturato</th>
+      <th scope="col">Partita Iva</th>
+      <th scope="col">Indirizzo Sede Legale</th>
+      <th scope="col"></th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of customers"  class="w3-hover-lime">
+      <th scope="row">{{ item.id }}</th>
+      <td>{{item.ragioneSociale}}</td>
+      <td>{{item.nomeContatto}} {{item.cognomeContatto}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.fatturatoAnnuale | currency:'EUR'}}</td>
+
+
+      <td>{{item.partitaIva}}</td>
+
+      <td><span *ngIf="item.indirizzoSedeLegale">via {{item.indirizzoSedeLegale.via || 'sconosciuta'}}, n° {{item.indirizzoSedeLegale.civico}}, cap {{item.indirizzoSedeLegale.cap}}, località {{item.indirizzoSedeLegale.localita}}</span>
+    <span *ngIf="!item.indirizzoSedeLegale"> Indirizzo non pervenuto</span></td>
+    <button mat-fab  class="mat-fab w3-hover-teal" style="background-color: white;" (click)="goCustomerDetail(item.id)"><mat-icon><span class="material-icons-outlined">
+      zoom_in
+      </span></mat-icon></button>
+    <button mat-fab class="mat-fab w3-hover-amber" style="background-color: white;" (click)="goToInvoice(item.id)"><mat-icon><span class="material-icons-outlined">
+      insert_drive_file
+      </span></mat-icon></button>
+    <button mat-fab class="mat-fab w3-hover-red" style="background-color: white;" (click)="deleteThisCustomer(item.id)" ><mat-icon><span class="material-icons-outlined">
+      clear
+      </span></mat-icon></button>
+    </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-between p-2">
+    
+    <!----<ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="getAllUsers()">
+    </ngb-pagination>---->
+
+    <ngb-pagination [collectionSize]="collectionSize" [pageSize]="pageSize" [(page)]="page" [boundaryLinks]="true" (pageChange)="getAllCustomers()">
+        <ng-template ngbPaginationPages let-page let-pages="pages" class="w3-hover-teal">
+            <li class="ngb-custom-pages-item" *ngIf="pages.length > 0">
+                <div class="form-group d-flex flex-nowrap px-2">
+                  <label
+                      id="paginationInputLabel"
+                      for="paginationInput"
+                      class="col-form-label mr-2 ml-1"
+                  >Page</label>
+                  <input #i
+                      type="text"
+                      inputmode="numeric"
+                      pattern="[0-9]*"
+                      class="form-control custom-pages-input w3-teal w3-hover-lime"
+                      id="paginationInput"
+                      [value]="page"
+                      (keyup.enter)="selectPage(i.value)"
+                      (blur)="selectPage(i.value)"
+                      (input)="formatInput($any($event).target)"
+                      aria-labelledby="paginationInputLabel paginationDescription"
+                      style="width: 2.5rem"
+                  />
+                  <span id="paginationDescription" class="col-form-label text-nowrap px-2">
+                      of {{pages.length}}</span>
+                </div>
+            </li>
+        </ng-template>
+    </ngb-pagination>
+  
+    
+    
+    <select class="custom-select w3-teal w3-hover-lime" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="getAllCustomers()">
+      <option [ngValue]="10"> 10 items per page</option>
+      <option [ngValue]="20">20 items per page</option>
+      <option [ngValue]="30">30 items per page</option>
+    </select>

@@ -1,0 +1,82 @@
+<table class="table w3-table w3-bordered w3-hoverable">
+    <thead>
+    <tr>
+      <th scope="col" sortable="id" (sort)="onSort($event)">#</th>
+      <th scope="col" sortable="numero" (sort)="onSort($event)">Numero fattura</th>
+      <th scope="col" sortable="anno" (sort)="onSort($event)">Anno</th>
+      <th scope="col">Importo</th>
+      <th scope="col">Data</th>
+      <th scope="col">Id cliente</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Partita Iva</th>
+      <th scope="col">Indirizzo Pec</th>
+      <th scope="col">Stato</th>
+      <th scope="col"></th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of invoices; let i = index" class="w3-hover-lime">
+      <th scope="row">{{ item.id }}</th>
+      <td>{{item.numero}}</td>
+      <td>{{item.anno}}</td>
+      <td>{{item.importo | currency:'EUR'}}</td>
+      <td>{{item.data | date:'short'}}</td>
+      <td>{{item.cliente.ragioneSociale}} {{item.cliente.tipoCliente}}</td>
+      <td>{{item.cliente.telefono}}</td>
+      <td>{{item.cliente.partitaIva}}</td>
+      <td>{{item.cliente.pec}}</td>
+      <td><span class="greenled" *ngIf="item.stato.nome === 'PAGATA'" ></span> 
+        <span class="redled" *ngIf="item.stato.nome === 'NON PAGATA'" ></span>{{item.stato.nome}} </td>
+      <button mat-fab class="mat-fab w3-hover-amber" style="background-color: white;" (click)="goInvoiceDetail(item.id)"><mat-icon><span class="material-icons-outlined">
+        zoom_in
+        </span></mat-icon></button>
+      <button mat-fab class="mat-fab w3-hover-red" style="background-color: white;" (click)="deleteThisInvoice(item.id)" ><mat-icon><span class="material-icons-outlined">
+        clear
+        </span></mat-icon></button>
+ 
+    </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-between p-2">
+    
+    <!----<ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="getAllUsers()">
+    </ngb-pagination>---->
+
+    <ngb-pagination [collectionSize]="collectionSize" [pageSize]="pageSize" [(page)]="page" [boundaryLinks]="true" (pageChange)="getAllInvoices()">
+        <ng-template ngbPaginationPages let-page let-pages="pages" class="w3-hover-teal">
+            <li class="ngb-custom-pages-item" *ngIf="pages.length > 0">
+                <div class="form-group d-flex flex-nowrap px-2 ">
+                  <label
+                      id="paginationInputLabel"
+                      for="paginationInput"
+                      class="col-form-label mr-2 ml-1 "
+                  >Page</label>
+                  <input #i
+                      type="text"
+                      inputmode="numeric"
+                      pattern="[0-9]*"
+                      class="form-control custom-pages-input  w3-teal w3-hover-lime"
+                      id="paginationInput"
+                      [value]="page"
+                      (keyup.enter)="selectPage(i.value)"
+                      (blur)="selectPage(i.value)"
+                      (input)="formatInput($any($event).target)"
+                      aria-labelledby="paginationInputLabel paginationDescription"
+                      style="width: 2.5rem"
+                  />
+                  <span id="paginationDescription" class="col-form-label text-nowrap px-2 ">
+                      of {{pages.length}}</span>
+                </div>
+            </li>
+        </ng-template>
+    </ngb-pagination>
+  
+    
+    
+    <select class="custom-select w3-teal w3-hover-lime" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="getAllInvoices()">
+      <option [ngValue]="10"> 10 items per page</option>
+      <option [ngValue]="20">20 items per page</option>
+      <option [ngValue]="30">30 items per page</option>
+    </select>
+

@@ -1,0 +1,67 @@
+<table class="table w3-table w3-bordered w3-hoverable">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Cognome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of users" class="w3-hover-lime">
+      <th scope="row">{{ item.id }}</th>
+      <td>{{item.nome}}</td>
+      <td>{{item.cognome}}</td>
+      <td>{{item.username}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.roles}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-between p-2">
+    
+    <!----<ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="getAllUsers()">
+    </ngb-pagination>---->
+
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [boundaryLinks]="true" (pageChange)="getAllUsers()">
+        <ng-template ngbPaginationPages let-page let-pages="pages" class="w3-hover-teal">
+            <li class="ngb-custom-pages-item" *ngIf="pages.length > 0">
+                <div class="form-group d-flex flex-nowrap px-2">
+                  <label
+                      id="paginationInputLabel"
+                      for="paginationInput"
+                      class="col-form-label mr-2 ml-1"
+                  >Page</label>
+                  <input #i
+                      type="text"
+                      inputmode="numeric"
+                      pattern="[0-9]*"
+                      class="form-control custom-pages-input w3-teal w3-hover-lime"
+                      id="paginationInput"
+                      [value]="page"
+                      (keyup.enter)="selectPage(i.value)"
+                      (blur)="selectPage(i.value)"
+                      (input)="formatInput($any($event).target)"
+                      aria-labelledby="paginationInputLabel paginationDescription"
+                      style="width: 2.5rem"
+                  />
+                  <span id="paginationDescription" class="col-form-label text-nowrap px-2">
+                      of {{pages.length}}</span>
+                </div>
+            </li>
+        </ng-template>
+    </ngb-pagination>
+  
+    
+    
+    <select class="custom-select w3-teal w3-hover-lime" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="getAllUsers()">
+      <option [ngValue]="10"> 10 items per page</option>
+      <option [ngValue]="20">20 items per page</option>
+      <option [ngValue]="30">30 items per page</option>
+    </select>
+  
+
+
+<!---<pre>{{users | json}}</pre>--->

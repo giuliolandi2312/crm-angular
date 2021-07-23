@@ -1,0 +1,23 @@
+.detail-button {
+    color: white;
+    margin-right: 10px;
+    background-color: rgb(0, 186, 211);
+}
+.cancel-button {
+    background-color: rgb(161, 0, 0);
+    color: white;
+}
+.add-button {
+    background-color:teal;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+.invoice-button {
+    background-color: orange;
+    margin-right: 10px;
+    color: white;
+}
+button {
+    margin: 20px;
+}

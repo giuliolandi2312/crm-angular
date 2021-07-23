@@ -1,0 +1,41 @@
+.login-button {
+    background-color: teal;
+
+
+
+}
+input {
+    border:2px solid teal;
+    border-radius: 30px;
+
+}
+
+form {
+    border-radius: 30px;
+}
+
+.container {
+    text-align: center;
+    border:3px solid teal;
+    border-radius: 30px;
+}
+
+h2 {
+    color: teal;
+}
+
+h1 {
+    color: teal;
+    font-size: 3em;
+    background-color: #cddc39;
+    padding: 10px;
+    border-radius: 30px;
+
+}
+::placeholder{
+    color: teal;
+    font-style: italic;
+}
+
+
+

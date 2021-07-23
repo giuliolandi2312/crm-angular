@@ -1,0 +1,17 @@
+.navbar {
+    justify-content: space-between;
+
+}
+
+span {
+    padding-right: 3rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.icons {
+    color: black;
+}

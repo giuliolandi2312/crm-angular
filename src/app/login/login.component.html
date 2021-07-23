@@ -1,0 +1,41 @@
+<form class="m-5"name="signupform" novalidate id="signupform" #signupform="ngForm" (ngSubmit)= "login()" >
+    <div class="container w3-pale-yellow">
+        <div class="column w3-bar p-3 ">
+            <div class="p-3">
+                <h1>Accedi</h1>
+                <label for="username" class="form-label"><h2>Username</h2></label>
+                <input type="text" class="form-control  w3-input w3-hover-lime" id="username" name="username" #username="ngModel" [(ngModel)]="user.username" placeholder="inserisci la tua username" required>
+                <div class="alert alert-danger w3-animate-left" [hidden]="username.valid || username.untouched"> Username richiesta </div>
+            </div>
+            <div class="p-3">
+                <label for="password" class="form-label"><h2>Password</h2></label>
+                <input type="password" class="form-control w3-input w3-hover-lime" id="password" name="password" #password="ngModel" [(ngModel)]="user.password" placeholder="inserisci una password" required>
+                <div class="alert alert-danger w3-animate-left" [hidden]="password.valid || password.untouched"> Password richiesta </div>
+            </div>
+            <div class="p-3">
+                <button mat-flat-button class="login-button my-3" type ="submit">LOGIN</button>
+            </div>
+            <div class="p-3">
+                <h2>oppure accedi tramite:</h2>
+                <button mat-fab class="mx-2 w3-hover-teal" style="background-color: white;"><mat-icon>
+                    <span class="material-icons-outlined">
+                    facebook</span></mat-icon>
+                </button>
+                <button mat-fab class="mx-2 w3-hover-teal" style="background-color: white;"><mat-icon>
+                    <span class="material-icons-outlined">
+                        email
+                        </span></mat-icon>
+                    </button>
+                <button mat-fab class="mx-2 w3-hover-teal" style="background-color: white;"><mat-icon>
+                    <span class="material-icons-outlined">
+                        fingerprint
+                    </span></mat-icon>
+                </button>
+                </div>
+             </div>
+        </div>
+
+</form>
+
+
+

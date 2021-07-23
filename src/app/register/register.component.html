@@ -1,0 +1,103 @@
+<form class="m-5" name="signupform" novalidate id="signupform" #registerForm="ngForm" (ngSubmit)= "register(registerForm)">
+  <div class="container w3-pale-yellow">
+      <div class="column p-3">
+        <div class="p-3">
+          <h1>Registrati</h1>
+          <label for="username" class="form-label"><h2>Username</h2></label>
+          <input type="text" class="form-control w3-hover-lime" id="username" name="username" #username="ngModel" [(ngModel)]="user.username" placeholder="inserisci la tua username" required>
+        </div>
+        <div class="p-3">
+          <label for="email" class="form-label"><h2>Email</h2></label>
+          <input type="email" class="form-control w3-hover-lime" id="email" name="email" #email="ngModel" [(ngModel)]="user.email" placeholder="inserisci la tua email" required>
+        </div>
+        <div class="p-3">
+          <label for="password" class="form-label"><h2>Password</h2></label>
+          <input type="password" class="form-control w3-hover-lime" id="password" name="password" #password="ngModel" [(ngModel)]="user.password" placeholder="inserisci una password" required>
+        </div>
+        <div class="p-3">
+          <label for="role" class="form-label"><h2>Role</h2></label>
+          <input type="role" name="role" required #role="ngModel" [(ngModel)]="user.role"
+          placeholder="Role" class="form-control w3-hover-lime" id="role">
+        </div>
+        <div class="p-3">
+          <select class="form-select" aria-label="Default select example" id="role" name="role" #role="ngModel" [(ngModel)]="user.role">
+            <option value="User">User</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </div>
+        <div class="my-3" >
+          <button mat-flat-button type="submit" class="register-button" >REGISTRATI</button>
+        </div>
+        <div class="my-5" >
+          <h2>oppure registrati con:</h2>
+        </div>
+        <div class="m-3">
+          <button mat-fab class=" w3-hover-teal" style="background-color: white;">
+            <mat-icon>
+              <span class="material-icons-outlined">
+                  facebook
+              </span>
+            </mat-icon>
+          </button>
+          <button mat-fab class="mx-3 w3-hover-teal" style="background-color: white;">
+            <mat-icon>
+              <span class="material-icons-outlined">
+                email
+              </span>
+            </mat-icon>
+          </button>
+          <button mat-fab class="mx-3 w3-hover-teal" style="background-color: white;">
+            <mat-icon>
+              <span class="material-icons-outlined">
+                fingerprint
+              </span>
+            </mat-icon>
+          </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+
+
+
+<!--<form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+  <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" required #username="ngModel" [(ngModel)]="user.username" placeholder="Inserisci il tuo username"
+          class="form-control" name="username" id="username" aria-describedby="username">
+      <div class="alert alert-danger" [hidden]="username.valid"> The name is required </div>
+  </div>
+  
+  <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" required #email="ngModel" [(ngModel)]="user.email" placeholder="Inserisci la tua email"
+          class="form-control" name="email" id="email" aria-describedby="email">
+      <div class="alert alert-danger" [hidden]="email.valid"> The email is required </div>
+  </div>
+
+  <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" name="password" required #password="ngModel" [(ngModel)]="user.password"
+          placeholder="Scrivi la tua password" class="form-control" id="password">
+      <div class="alert alert-danger" [hidden]="password.valid"> The password is required </div>
+  </div>
+
+  <div class="mb-3" hidden>
+      <label for="role" class="form-label">Role</label>
+      <input type="role" name="role" required #role="ngModel" [(ngModel)]="user.role"
+          placeholder="Role" class="form-control" id="role">
+      <div class="alert alert-danger" [hidden]="role.valid"> The password is required </div>
+  </div>
+
+  <button type="submit" class="btn btn-success" [disabled]="this.registerForm.invalid">Register</button>
+
+  <div class="mt-3">
+      <p>Se già registrato? Clicca qui per loggarti!</p>
+      <button type="button" routerLink="/loginpage" class="btn btn-dark">Login</button>
+  </div>
+</form>-->
+
+
+

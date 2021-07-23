@@ -1,0 +1,31 @@
+<div class="container w3-pale-yellow">
+    <div class="row ">
+        <div class="col-md-12 " *ngIf="showForm">
+            <form [formGroup]="form" name="form" (ngSubmit)="cSalva(form)">
+                    <h3>DETTAGLIO FATTURA : <b>{{invoice.cliente.cognomeContatto}}  {{invoice.cliente.ragioneSociale}}  {{invoice.cliente.partitaIva}}  {{invoice.cliente.tipoCliente}}</b></h3>
+                    <div class="mb-3">
+                        <label class="form-label">Data</label>
+                        <input type="date" class="form-control" formControlName="data" id="data" autocomplete="false">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Numero</label>
+                        <input type="number" class="form-control" formControlName="numero" id="numero" autocomplete="false">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Anno</label>
+                        <input type="number" class="form-control" formControlName="anno" id="anno" autocomplete="false">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Importo</label>
+                        <input type="number" class="form-control" formControlName="importo" id="importo" autocomplete="false">
+                    </div>
+                    <div formGroupName="stato"><h3>STATO PAGAMENTO</h3>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" formControlName="nome" id="nome" autocomplete="false">
+                        </div>
+                    </div>
+                    <button mat-flat-button class="submit-button" type="submit">Salva dettagli</button>
+            </form>
+        </div>
+    </div>
+</div>

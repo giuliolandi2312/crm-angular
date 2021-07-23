@@ -1,0 +1,181 @@
+<div class="w3-sidebar w3-bar-block w3-teal  w3-collapse" style="width:15%">
+  <a routerLink="user" class="w3-bar-item w3-button w3-hover-lime my-2">
+    <mat-icon class="mx-2">
+      <span class="material-icons-outlined">
+        account_circle
+      </span>
+    </mat-icon>Utenti</a>
+  <a routerLink="customer" class="w3-bar-item w3-button w3-hover-lime my-3 ">
+    <mat-icon class="mx-2">
+      <span class="material-icons-outlined">
+        people_alt
+      </span>
+    </mat-icon>Clienti</a>
+  <a routerLink="invoice" class="w3-bar-item w3-button w3-hover-lime my-3 ">
+    <mat-icon class="mx-2">
+      <span class="material-icons-outlined">
+        receipt
+        </span>
+      </mat-icon>Fatture</a>
+  <a routerLink="login" class="w3-bar-item w3-button w3-hover-lime my-3 ">
+    <mat-icon class="mx-2">
+      <span class="material-icons-outlined">
+        login
+      </span>
+    </mat-icon>Accedi</a>
+  <a routerLink="register" class="w3-bar-item w3-button w3-hover-lime my-3 ">
+    <mat-icon class="mx-2">
+      <span class="material-icons-outlined">
+        app_registration
+      </span>
+    </mat-icon>Registrati</a>
+  <a  class="w3-bar-item w3-button w3-hover-lime my-2" (click)="logout()">
+    <mat-icon class="mx-2">
+      <span class="material-icons-outlined">
+          logout
+      </span>
+    </mat-icon>Esci</a>
+</div>
+  
+  
+
+  <div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+    <!-- Header -->
+    <header class="w3-container" style="padding-top:22px">
+      <h5><b><i class="fa fa-dashboard"></i>Dashboard</b></h5>
+    </header>
+  
+    <div class="w3-row-padding w3-margin-bottom w3-animate-zoom ">
+      <div class="w3-quarter">
+        <div class="w3-container w3-white w3-hover-lime w3-padding-16 w3-card ">
+          <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
+          <div class="w3-right">
+            <h3>52</h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>Messaggi</h4>
+        </div>
+      </div>
+      <div class="w3-quarter w3-animate-zoom">
+        <div class="w3-container w3-white w3-hover-lime w3-padding-16 w3-card">
+          <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+          <div class="w3-right">
+            <h3>99</h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>Visite</h4>
+        </div>
+      </div>
+      <div class="w3-quarter">
+        <div class="w3-container w3-white w3-hover-lime w3-padding-16 w3-card">
+          <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
+          <div class="w3-right">
+            <h3>23</h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>Condivisioni</h4>
+        </div>
+      </div>
+      <div class="w3-quarter">
+        <div class="w3-container w3-white w3-hover-lime w3-padding-16 w3-card">
+          <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+          <div class="w3-right">
+            <h3>50</h3>
+          </div>
+          <div class="w3-clear"></div>
+          <h4>Utenti</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="w3-panel">
+      <div class="w3-row-padding" style="margin:0 -16px">
+
+        <div class="w3-twothird w3-animate-zoom">
+          <h5>Feeds</h5>
+          <table class="w3-table w3-striped w3-white w3-card">
+            <tr  class="w3-hover-lime">
+              <td><i class="fa fa-user w3-text-teal  w3-large"></i></td>
+              <td>Nuovo utente</td>
+              <td><i>10 mins</i></td>
+            </tr>
+            <tr   class="w3-hover-lime">
+              <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
+              <td>Nuova notifica</td>
+              <td><i>15 mins</i></td>
+            </tr>
+            <tr   class="w3-hover-lime">
+              <td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
+              <td>Lista clienti aggiornata</td>
+              <td><i>17 mins</i></td>
+            </tr>
+            <tr   class="w3-hover-lime">
+              <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
+              <td>Nuovo commento</td>
+              <td><i>25 mins</i></td>
+            </tr>
+            <tr   class="w3-hover-lime">
+              <td><i class="fa fa-bookmark w3-text-blue w3-large"></i></td>
+              <td>Controllo transazioni</td>
+              <td><i>28 mins</i></td>
+            </tr>
+            <tr   class="w3-hover-lime">
+              <td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
+              <td>Sovraccarico CPU</td>
+              <td><i>35 mins</i></td>
+            </tr>
+            <tr   class="w3-hover-lime">
+              <td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
+              <td>Nuova condivisione</td>
+              <td><i>39 mins</i></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="w3-container w3-animate-zoom">
+      <h5>Statistiche fatturazione</h5>
+      <p>Fatture pagate</p>
+      <div class="w3-white  w3-round-xlarge">
+        <div class="w3-container w3-center w3-green  w3-round-xlarge " style="width:25%"><h3>+25%</h3></div>
+      </div>
+  
+      <p>Fatture in attesa</p>
+      <div class="w3-white  w3-round-xlarge">
+        <div class="w3-container w3-center  w3-orange  w3-round-xlarge w3-text-white" style="width:50%"><h3>50%</h3></div>
+      </div>
+  
+      <p>Fatture non pagate</p>
+      <div class="w3-white w3-round-xlarge">
+        <div class="w3-container w3-center  w3-red  w3-round-xlarge" style="width:75%"><h3>75%</h3></div>
+      </div>
+    </div>
+    <hr>
+
+    <hr>
+    <div class="w3-container">
+      <h5>Ultimi utenti registrati</h5>
+      <ul class="w3-ul w3-card-4 w3-white">
+        <li class="w3-padding-16 w3-hover-lime">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZD4H5p_kX0o1D7ZyBq_KRug9rs5eKLcb4mQ&usqp=CAU" class="w3-left w3-circle w3-margin-right" style="width:35px;height: 35px;">
+          <span class="w3-xlarge">Francesco</span><br>
+        </li>
+        <li class="w3-padding-16 w3-hover-lime">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7JF_LTBwLSkA30_VWObBVkEvSke_9fHMllA&usqp=CAU" class="w3-left w3-circle w3-margin-right" style="width:35px;height: 35px">
+          <span class="w3-xlarge">Pierpaolo</span><br>
+        </li>
+        <li class="w3-padding-16 w3-hover-lime">
+          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBISEhgSEhURGBgSGBISEhgSGBERERgYGBgaGRkYGBgcIS4lHB4rIRgYJjgmKy8xNTU1GiQ7QDszPy40NTEBDAwMEA8QHxISHjQhJCs3MTE0NDQ0MTQ0NDQ2NDQ0NDQ0NDQxMTQ0NDE0NDQ0NDE0NDQ0NDQ0NDQ0NDQ0NDQ0Mf/AABEIALcBEwMBIgACEQEDEQH/xAAbAAACAgMBAAAAAAAAAAAAAAAAAQIGBAUHA//EAEAQAAIBAgIFCQUGBQMFAAAAAAABAgMRBCEFEjFBUQYiYXGBkaGxwRMyUtHwByNicoLhQqKywvEzQ5IUJFNz8v/EABkBAQADAQEAAAAAAAAAAAAAAAABAwQCBf/EACQRAQEAAgIBBAIDAQAAAAAAAAABAhEDMSESIjJRE0FhcYEE/9oADAMBAAIRAxEAPwDoYAAEgIkgALgK4DQ7iQwATGRYDIgIBiGxAO4guAAAGNjsZCjDXm7cOLfBEW681Mlt1HtWrRgrydkjQ4zlFCN1TTlbfko97K/pTTLqy5ztG/Nitn7msxONy3cEZs+a2+1qw4ZJ7lilyrqQd5Ri1vtfzDHctKeSpJt/xX3PgU2VSc3m8uoMdhNSMZ585O+7fwImeWu03jx70t+H5U1HtjHqbcX5G6wGnqdR6r5snsUrZ9T2M5tQrWWTXY7nvTxDvt7GROXKX7TeLHKfTrUZXJFI0LyglTahUu4cdsoriuKLpRqxnFSi00801mjTjnMp4Zc+O43y9BDA7cEAAADAAAAFcBgAEhgICAx3IjuACGxASTG2QTJXAdyLYNkWBK4rkbhcB3Ai2FwHcBBcBVaihFyk0lFNtvckc15SacdWbzajHJL4Vu/UyxcttKKnTVJPOVpStwXurvz7EcsxeLu228k2+t/XgZ+XK5X0xp4cZjPVXvW0g09Z+8/dW6K3ehkYCcpu8m89hpMDRqV6ihBXlN5fW5HU9A8k6dOKdR68tr3RXZvK7jrwtmW/LU4DRkqlrLLuRs9K6Ik4R1M9VWasXGhg4QXNSVj0eGjwHounXrjkeNwrh7ya6Wpf1JGPRbW3Ndj/AMnYpYGm9sIPrSZpdK8l6FRNwioTe+GSb6V6kemw9Uqhqrbfs2cUWDk/pz2MlGXuSee/Vv8AxLo6CsaVwlSjN06iaktltkluce7t6zX4bHuLtJ5Pf6/XyGO55hlqzVdyhNSSaaaeaa2WJlL5Gaav/wBvN/8ArfD8PyLmasMplNsWeNxugAAduAAWAAAAAAAAGACuAxCuDYDuFyIXAdx3IABNsVyNwuAMVwbEA7jIXHcCQpO2YjXcoMZ7HC1Kl81FqPW8l4kW6m0ybunMOV+k/aVptbNbVjvWWX12FQqSc5qEU220klm22ZOkcQ7voy7Xm/NI3PIvR95+2kr6r5t+PEonieqtPd9MWzknoJYaClJJ1Jpa74L4V68S54VmrpLLI2eGZVL5Xa1G0hLIk5HjCR6KRar09DzmSTITYRFe5Q6Hjiqbi7KcbunLenw6mcl0hhZwnOE1qzpt6y3P8S+t522rNcUU7ljolVY+1grTpq91tlHgyvqrNbik6FxrjNK7W6+9Z5d3qdn0Njvb0oz/AIrWn+ZZM4TF6s77L526V9M6dyGx3PdNvKpFVI9aykvJlmF9OX9qs56sf6XcBgaGUMQwAQAAAAASFcGITZAdwIsYBcVxCuA7hcjcLgO4NkbhcBthcVxXAlcLkbhcCVynfaNjdWjCkn771n1LZ9dBcLnMftAxOvidXdTil0XzfyOOS6izim655KWvO34pN950XkxS1aEZPLK7Od4JXqu3GXdc6louGrRhfZqoq5Ppdx/bMWKqzVqSdtza295i1K+Nhm7pfp8wq6bhR2uKtx2LsWbfQvAx3y0w0pakliZOzctWNKEUltaUnd7+4rxxt6i25Sd1utHaZqOylnx2XLJRrayT4oqGHpQqXdOV2s7STp1I77Tg7dj2MsugLyjaW1DzvRda2ek8dOnHmK7fgV+visXUlbXsuCyRY8bR1pWW7NlG03yiWGvJU5zV3G6bjTTVr5rOTz6jrVqN4ybrfUNHVXnOau+OZ6qnUT1KlmmspLZ1MrWG5U1Jwc/Y3hFxUp0Kkptay1vdmknttbcWLRePjXgpRd+xrwex9AuNnZMpZ4cz5SYT2NWaSyi9dfleb7mWDkljNWVCpfZKKfVLmvx8jy+0KhqSVRcLfs+81nJyf3MehTt2S1kL4xl/lE82z7juSYGLo3Ee0own8UYt9ds/G5kmqeWOzRgxoQQiAwYAAgJERMZEgJsEwYrgDYNiYrgDYribFcB3C5FiuBLWHc8yVwJXC5G4XAm3bM4zyixGvWqT4yl52Xkdb0jW1KU5/DCT8DiuOm2m3tk/W/8AcU8l8yL+KeLWvwXOaSykpNPpVzq+jsOpU4xfwpeByzBwaasrtyfXtOpaIq81PoK8+1uE8MLHcnIOamot8b3l/ghT5NUJ1PaSp3d0/wCPVLthJKSzRl+xiRLft1ZP3GljhIqXtHFa9ra22VvhT3IytGPVl13DH1FFW45KwaK1ZN3avvI35NeGbL3n05Gq0loeNRaupBp52ay7OBuMVFRad1nsPSjLWRYhWaOhoxh7NU1GObtHJXe/be5ssJgo042SStwWZtpQRj4h2IN/Tnv2jRXsk+zvKroB2prok34r5ll+0yX3UFxmvL9ytaJVqTXDMjL4pny/x1XkZW1sNqv/AG5yh2bfUsJTOQlfnVad9upNeKfoXIv47vGMvLNZUwAR2rMBAA7AAEjyYhi2ECMhEmyLAVxNgxMBMixtiYBcVwEA7juRC4EguIEBqeVdfUwk/wASUO929TkeO226H4Zeh0rl5WtRhC/vz8os5tjfe7PNXZnzvuaeOe1k8noKVRReWbtJ+6nuT68sy56Pk4R1Xti2uJRtDaUjh6kta1pWs3svzcnk7XzzsWvR2MjVTnCUZZ87U929ldeRzlKsxsXHAYjI2Sr5FUwtWRtKeJtt3bSva2w9KKpKLlBXcc0uPUVTB1MbSrynJJ05ZJJNSj0st8cTBrOSS6WkSp1qGxzjn0NomI1a11d4qp7OdOahGLvOMo6+umtl/wCEsOGlJRz27zHjUoxyU13St5E3iqdspw70dFl+mX/1FzFxNcxpzcnePzTPGalcjZJFO5fx14wyvbXeexX1VfxK7gMoSX4Wu5fsbD7RMe41IU0ot6kpNvaryy/p8DVYOW7jdeaOspdK5Z6qu3IqpbEx/HTfo/Q6Hc5fyNqff0XxUo/ynTky3i6Uc3yTC5EC1SkIAAdwEBI8wYMGQIMRJkWBFkWyTIsBAwZG4AxNibFcB3C5G47gTQIVwAo/LytetSp8IVJvtsvQpuMXPfXbsRYuU9TXx8vwQhHvd/U0VeN3n+J9/wBMy5X3VsxntjRYund9b9EbjkjivZzlTbymlJdayfoa7Hx5yXX8jwp1JRlGUdsbtdl8vEs7x0r6y26xg6yumbSthqdaLi21rLanZ7LZdJRtD6UU4pp9ae1PgyzYTFbFfqKLNVpmUrWVtFSpStKtNpXs3FN26ekzcPo5TV1iJZ7lGOXgbuVGNVc484aAj/C2uomV3jlIwaeA1VzsRN2vf3I+CielLR8ar1bzcdjd9XxVjZ0tCRTzz6zPhQUFkdbMuSXp408PClBQgrJbEtxjVqm098TUKbyr08qMPZ02vaTTUV8K+J+nSRJuq7dTah8rcb7fGTkndRapx6o5P+bWMzBPNdUX35ldjG8+trzLFgtqXZ3WLc+lPH5tbzkpU1alJ8Jpd7aOtQZx7QktVwa3STXZJnXoPxsOG9uOedV7oQkwbLlBgK4wAAAkQYmwAgIixiYEWRZJkGwEJgxARZG42yIDGIAJJhcRCvPVhJ8E2BzDGz18XWn+Ky/SnbyRhzefUrefzRLCTupze1uUvFL0PCTzl1qPkY+63zxGux+c/wBLXiY0IXl1axl1VrTk+DiiNGHOn0O313Fm9RVZujRN41LLJyjddjXzZaMHpFrmyyaK5hVq4iC4px8CwVsJvOcvLrHwuGitIRktpv6GIVjl2GqzpvIsOD0jUsjnWncu15hiFvMbE4lJXNBDE1ZfTJezlP3230bifJ4Y+l9IyjTnOOyMW7voW45NGrOpUlObcpOMpSb23sdI5Z1FDDSj8XN7zm+Hjzp/l/uR3j1VefceWGheovzR8zeYP/Ut0JrvNXhqdqi/MkbXDZVojO7MJpsdFzXN/M3/ADXOtYKprU4PjGN+u2Zx/AysrcG+9P8AY6toKprUYvr8c15ji+VjnnntlbNMdyKY0zQzGMQ2BICIEiIgZGTIA2RbEwAi2RuSaItgKRFjkRATEgYAA0IAGYWm6mrh6j/BLyM01HKmdsLPq9Gc5XWNdYzeUc7w9lTv8W3qbf7GNHPtet4t+h7zWrTS4KPhGTPOnHPqSf14mWNrEjDKT4z8lF/MjTXv9M2+5/szIhDmv839qFGFr/mqeZO3OkKUPvoS+Gdv5UXmnhrx2FTpUue+id/JepfsHTvFEW7dSaaPEYGzukZeBpWNrWwpGlhrEj0pxy2GRGNhQhYJXSGzSlcu614qPW2VKhD7xr4oy8GmvIsPK2etUa4K5pLWnBvjqvqasvHyJl8Ocu3nCFpp/jg/IzF/qLtX9X7HhKLV+jV+R71Hzk+LUu+z+feKRsMLFe0kvik333fqdB5I1tai0/4Wr91vQ57TyqdD1PLVfkXHkhXtKcOOf13kcd1lDlm8KuSY7nnGRJM2MSaY0yCZJMgSAjcCQmyDJMgQExDYrgJkWSkyDYCExsTATEAACGjMwGB9pdttLdbaza0cJCGxLreb7wNPTwU3m1br29xoeXNKNPCSu23JpcF0l4qKxRPtFqfdwp8W33Zf3HHJdY1ZxTeUc8qLmpb9/wDxt6kaUc5diXl6GTVjn1f5IRjt7F3J/My/pt08KNPJ/nmu669EecY5v880+2LfoZVH3G+MqkvGR4QfOmvxu3bdeoR9MvDK9SS4vzjFl/wEOZF9COf4af3sXxUX4JM6Xo6l92jmdur0fsyKhZmwVIUqJ3pWw3Ax8QsjYukY2Ip5CpjmnKen94+mLXijTY9WhGa3NfNFn5W0GnrdD8iv4qGtSlbhBrudvES+Yizspwu5rjHXXbaXqJu8E+CXg/8AJLDZ6j6HB/peQoRtrR4X9L+NvElDLlL3JdCvbdzl80WTk3U1a8Pxc3vyKzTV6Ultcc13W9EbfRVbVqQmtzUvU53qyu9bljpkWTRn0qMaiUrLnK/YKej8rxfYzc89hIkmRlFp2eTQXAlcCNwALkWxXBsgDItg2RbAbZFg2K4AFxXItgDZk4HCe0ln7q29PQYsYuTSW15FhwlNRiktwGTRgo2SVlax6yiQPVgYuI91nNOXtfXrwp8Ix8W2/Q6bivcfUcg5Q1vaYxv4dZ/8YlHPfEi/gnm1pp5t9Prf5kWrJdL82iWpm1wy8P2IVnb9MV3pN/Iz3pqnbyoTvTX633//AEa+E+fPg3ftuZcXqxXQvkaunPN9p1j5lRl+m30fPnw6Hn2N/M7jo3CQqUYTSs5Ri7x2PLejguEnz1+b1O4cjMQ5YWCb9267LnXFJ6tVxzWzHcZzwUlss/BnnOhJbYvuNxrApI0eiM35a0M4W3HhKi5bIyfUmyy3Qmzn8bv838OY8stDVPZSqtKKj8TWs75ZJde8oP8AttPdFeeR2Hl1O9KEOMm31RONVJWhJdniyjOTHLUXYW5Y7rzws+bF71PPtPbFLVnrLZlJ9WyXhJ9xiYbZNcLTX6X8mbCstaEHueXerMb1UzoYV6stXjePRnsM7AOztuTt3O68GahyatL4XqPrjmvB+BsqdRKpfYpKM15Mix1K7Roisp0YWfvQglxyWfkbbVKvyLq+0pxX/jTXe2WlmzC7xlYs5rKx41sNGazXbvNRiKLg7btzN8+BjYqipxt3M6cNKBJqSy4AB5NkbgBATYmwACLYrgACbE2AAZejqd25di9TdUkMAPSew9Yu6AAPDHf6cvyy8ji9Vudecuif80l6DAz836af+fqsNLK/xPLqbt5R8TCqTvFy4uT8bLwQAZ8mmMKtPm9i9fkYtJc7sfoAHePTi9srD+92+TR2jkW7Ue594Adcfzc8nwq1xzEwA1sRgAEiocuHzV0RqLtlFnG8TLm9ck/rwADHn823D4Rj03z7bpNxfVJW9TOwstajbfH0bXoxgRl0mdoSjfW6Updq2+Rk4d3jB74uUOx5+vgAEXpM7dV+zud6M+iUf6f8lxjxADVx/GMnL8qGyMgAsVsWVNPcAAB//9k=" class="w3-left w3-circle w3-margin-right" style="width:35px;height: 35px;">
+          <span class="w3-xlarge">Carla</span><br>
+        </li>
+      </ul>
+    </div>
+    <hr>
+  
+
+
+  
+  
+

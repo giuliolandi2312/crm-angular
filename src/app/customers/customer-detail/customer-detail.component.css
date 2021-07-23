@@ -1,0 +1,55 @@
+button {
+    background-color: teal;
+    width: 200px;
+    margin: 20px;
+
+}
+
+input, select {
+    border:2px solid teal;
+    border-radius: 30px;
+    color: teal;
+
+}
+
+form {
+
+    border-radius: 30px;
+}
+
+.container {
+    text-align: center;
+    border:3px solid teal;
+    border-radius: 30px;
+    margin-top: 50px;
+
+
+}
+
+label{
+    color: teal;
+
+}
+
+h3 {
+    color: teal;
+
+    margin-bottom: 40px;
+    margin-top: 40px;
+    background-color: #cddc39;
+    padding: 10px;
+    border-radius: 30px;
+    margin-bottom: 40px;
+}
+
+.column {
+    padding-left: 170px;
+}
+
+::placeholder{
+    color: teal;
+    font-style: italic;
+}
+
+
+

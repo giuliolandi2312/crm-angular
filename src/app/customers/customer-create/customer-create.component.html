@@ -1,0 +1,120 @@
+<div class="container" >
+    <div class="row">
+        <form [formGroup]="form" name="form" (ngSubmit)="create(form)" class="col-lg-12 w3-pale-yellow"><h3>NUOVO CLIENTE</h3>
+            <div class="mb-3 ">
+                <label class="form-label">Ragione Sociale</label>
+                <input type="text" class="form-control" formControlName="ragioneSociale" id="ragioneSociale" autocomplete="false">
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Partita Iva</label>
+                <input type="text" class="form-control" formControlName="partitaIva" id="partitaIva" autocomplete="false">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" formControlName="email" id="email" autocomplete="false">
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Tipo Cliente</label>
+                <!--<input type="text" class="form-control" formControlName="tipoCliente" id="tipoCliente" autocomplete="false">-->
+                <select class="form-control" formControlName="tipoCliente" id="tipoCliente" *ngIf="tipiCliente">
+                    <option value=""></option>
+                    <option *ngFor="let item of tipiCliente" value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Pec</label>
+                <input type="email" class="form-control" formControlName="pec" id="pec" autocomplete="false">
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Telefono</label>
+                <input type="tel" class="form-control" formControlName="telefono" id="telefono" autocomplete="false">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nome Contatto</label>
+                <input type="text" class="form-control" formControlName="nomeContatto" id="nomeContatto" autocomplete="false">
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Cognome Contatto</label>
+                <input type="text" class="form-control" formControlName="cognomeContatto" id="cognomeContatto" autocomplete="false">
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Telefono Contatto</label>
+                <input type="tel" class="form-control" formControlName="telefonoContatto" id="telefonoContatto" autocomplete="false">
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Email Contatto</label>
+                <input type="email" class="form-control" formControlName="emailContatto" id="emailContatto" autocomplete="false">
+            </div>
+                <div formGroupName="indirizzoSedeOperativa"><h3>INDIRIZZO SEDE OPERATIVA</h3>
+                    <div class="mb-3 ">
+                        <label class="form-label">Via</label>
+                        <input type="text" class="form-control" formControlName="via" id="via" autocomplete="false">
+                    </div>
+                    <div class="mb-3 ">
+                        <label class="form-label">Civico</label>
+                        <input type="text" class="form-control" formControlName="civico" id="civico" autocomplete="false">
+                    </div>
+                    <div class="mb-3 ">
+                        <label class="form-label">Cap</label>
+                        <input type="number" class="form-control" formControlName="cap" id="cap" autocomplete="false">
+                    </div>
+                    <div class="mb-3 ">
+                        <label class="form-label">Località</label>
+                        <input type="text" class="form-control" formControlName="localita" id="localita" autocomplete="false">
+                    </div>
+                    <div formGroupName="comune">Comune
+                        <div class="mb-3">
+                            <label class="form-label">Nome</label>
+                            <select class="form-control" formControlName="id" id="id" autocomplete="false" *ngIf="listaComuni">
+                                <option value=""></option>
+                                <option *ngFor="let item of listaComuni"  value="{{item.id}}">{{item.nome}} ({{item.provincia.sigla}})</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div formGroupName="indirizzoSedeLegale"><h3>INDIRIZZO SEDE LEGALE</h3>
+                    <div class="mb-3 col-lg-12">
+                        <label class="form-label">Via</label>
+                        <input type="text" class="form-control" formControlName="via" id="via" autocomplete="false">
+                    </div>
+                    <div class="mb-3 col-lg-12">
+                        <label class="form-label">Civico</label>
+                        <input type="text" class="form-control" formControlName="civico" id="civico" autocomplete="false">
+                    </div>
+                    <div class="mb-3 col-lg-12">
+                        <label class="form-label">Cap</label>
+                        <input type="number" class="form-control" formControlName="cap" id="cap" autocomplete="false">
+                    </div>
+                    <div class="mb-3 col-lg-12">
+                        <label class="form-label">Località</label>
+                        <input type="text" class="form-control" formControlName="localita" id="localita" autocomplete="false">
+                    </div>
+                    <div formGroupName="comune">Comune
+                        <div class="mb-3 col-lg-12">
+                        <!--<input type="text" class="form-control" formControlName="nome" id="nome" autocomplete="false">-->
+                            <select class="form-control" formControlName="id" id="id" autocomplete="false" *ngIf="listaComuni">
+                                <option value=""></option>
+                                <option *ngFor="let item of listaComuni" value="{{item.id}}">{{item.nome}} ({{item.provincia.sigla}})</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 col-lg-12">
+                    <label class="form-label">Data Inserimento</label>
+                    <!--<div class="form-control disabled">{{customer.dataInserimento | date:'short'}}</div>-->
+                    <input type="date" class="form-control" formControlName="dataInserimento" id="dataInserimento"  autocomplete="false">
+                </div>
+                <div class="mb-3 col-lg-12">
+                    <label class="form-label">Data Ultimo Contatto</label>
+                    <!--<div class="form-control disabled">{{customer.dataUltimoContatto | date:'short'}}</div>-->
+                    <input type="date" class="form-control" formControlName="dataUltimoContatto" id="dataUltimoContatto"  autocomplete="false">
+                </div>
+                <div class="mb-3 col-lg-12">
+                    <label class="form-label">Fatturato Annuale</label>
+                    <!--<div class="form-control disabled">{{customer.fatturatoAnnuale | currency:'EUR'}}</div>-->
+                    <input type="text" class="form-control" formControlName="fatturatoAnnuale" id="fatturatoAnnuale" autocomplete="false">
+                </div>
+                <button mat-flat-button class="submit-button" type="submit">Salva dettagli</button>
+        </form>
+    </div>
+</div>
